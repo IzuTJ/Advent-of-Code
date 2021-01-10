@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+<script>
+  const input = prompt("Enter input here.");
+  var interim = input.split(" ");
+  var output = [];
+  var a, b, c;
+  var area = [];
+  var areasum = 0;
+
+  for(var i = 0; i<interim.length; i++){
+    output[i] = interim[i].split('x');
+  }
+
+  for(var i = 0; i<output.length; i++){
+    for(var j = 0; j<output[i].length; j++){
+      output[i][j] = parseInt(output[i][j]);
+    }
+    a = output[i][0] * output[i][1];
+    b = output[i][1] * output[i][2];
+    c = output[i][2] * output[i][0];
+    area[i] = Math.min(a, b, c) + 2 * (a + b + c);
+    areasum += area[i];
+  }
+  console.log(areasum);
+  console.log(area);
+</script>
+</body>
+</html>
