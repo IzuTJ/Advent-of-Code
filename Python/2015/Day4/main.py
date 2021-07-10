@@ -5,14 +5,12 @@ key = file.read()
 file.close()
 
 addit = 1
-flag = True
 
-while flag:
+while True:
     new_key = key + str(addit)
     result = hashlib.md5(new_key.encode())
     x = str(result.hexdigest())
     if x[:6] == '000000':
-        flag = False
         break
     addit += 1
 

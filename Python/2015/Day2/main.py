@@ -1,10 +1,10 @@
 file = open("input.txt", 'r')
-present_string = file.read()
+present_list = file.readlines()
 file.close()
 
 # splits up the string twice to store dimensions of boxes as lists in a list of presents
 # the dimensions in string form are converted to integers
-present_list = present_string.split("\n")
+
 for i in range(0, len(present_list)):
     present_list[i] = present_list[i].split('x')
     for j in range(0, len(present_list[i])):
